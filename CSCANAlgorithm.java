@@ -14,9 +14,11 @@ import java.util.Collections;
 
     public void calcSequence() {
         ArrayList<Integer> lower = new ArrayList<>();
+        
         ArrayList<Integer> higher = new ArrayList<>();
 
         for (Integer r : referenceQueue) {
+            
             if (r < position)
                 lower.add(r);
             else
@@ -24,9 +26,11 @@ import java.util.Collections;
         }
 
         Collections.sort(lower);
+        
         Collections.sort(higher);
 
         if (direction == ScheduleAlgorithm.RIGHT) {
+            
             for (Integer r : higher)
                 seekToSector(r);
 
@@ -37,6 +41,7 @@ import java.util.Collections;
 
             for (Integer r : lower)
                 seekToSector(r);
+            
         } else {
             for (int i = lower.size() - 1; i >= 0; i--)
                 seekToSector(lower.get(i));
