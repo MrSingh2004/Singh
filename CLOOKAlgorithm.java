@@ -24,19 +24,25 @@ import java.util.Collections;
         }
 
         Collections.sort(lower);
+        
         Collections.sort(higher);
 
         if (direction == ScheduleAlgorithm.RIGHT) {
+            
             for (Integer r : higher)
                 seekToSector(r);
 
             for (Integer r : lower)
                 seekToSector(r);
+            
         } else {
             for (int i = lower.size() - 1; i >= 0; i--)
+                
                 seekToSector(lower.get(i));
+            
 
             for (int i = higher.size() - 1; i >= 0; i--)
+                
                 seekToSector(higher.get(i));
         }
     }
