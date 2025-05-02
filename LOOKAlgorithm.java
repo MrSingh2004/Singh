@@ -27,13 +27,18 @@ import java.util.Collections;
         Collections.sort(higher);
 
         if (direction == ScheduleAlgorithm.RIGHT) {
+            
             for (Integer r : higher)
                 seekToSector(r);
+            
             for (Integer r : lower)
                 seekToSector(r);
+            
         } else {
+            
             for (Integer r : lower)
                 seekToSector(r);
+            
             for (Integer r : higher)
                 seekToSector(r);
         }
